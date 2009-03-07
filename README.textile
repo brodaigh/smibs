@@ -7,19 +7,21 @@ Specifically it is for one product the only variable in that product is the fabr
 It has no image uploads, I plan on scp'ing the images over to the server and typing the path to where the images are hosted rather than all the junk of uploads.
 
 It has no validations on an order, because;
-*I can.
-*I HATE it when forms fail.
-*Rather than rejecting an order and potentially loosing it for good, it gives me a hook for further communication and a potential sale, providing an email was provided.
+* I can.
+* I HATE it when forms fail.
+* Rather than rejecting an order and potentially loosing it for good, it gives me a hook for further communication and a potential sale, providing an email was provided.
 
 Managing Smibs requires SmibsZen which I wrote as a separate Sinatra App, it connects to Smibs Database.
 Located at "http://github/brodaigh/smibs-zen/tree/master":http://github/brodaigh/smibs-zen/tree/master
 
 Todo:
-*...
+* ...
 
 Before I go Live:
-*Pictures.
-*Organize my sewing cave.
-*Go fabric shopping! :)
+* Pictures.
+* Organize my sewing cave.
+* Go fabric shopping! :)
 
-*The brand Smibs is obviously not for public use without my written permission.*
+The brand Smibs is obviously not for public use without my written permission.
+
+My dud simple code is totally up for peer suggestions/feedback/critisism/whatnot!
