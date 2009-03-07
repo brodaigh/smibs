@@ -1,0 +1,43 @@
+%a{:href => "/feedback/new?height=400&width=450", :class => 'thickbox'}
+  %img.buttons{:src => '/images/buttons2.png'}
+#show 
+  %a{:href => '/'}
+    %img.logo{:src => '/images/SMIBS.png', :alt => "Smibs"}
+  .clear 
+  .unit 
+    %h1 
+      Thank-you 
+      =@order.buyers_name
+      for your order.
+    -if @order.fabrics.empty?
+      %p Your order is for nothing. You selected no fabric. Perhaps you're indecisive? We can select a fabric for you, or you can go back and select one if you want to.
+
+  .unit 
+    %h2 Postage Details
+    %p=@order.recipients_name
+    %p=@order.recipients_address
+    -if @order.recipients_address.empty?
+      %p We didn't get an address from you. That's ok. We can get it later.
+    %p 
+      =postage_price(@order.overseas)
+
+  .unit 
+    %h2 Your email and Payment preference.
+    -if @order.buyers_email.empty?
+      %p No email! This is bad. I'm starting to think you're not very serious about this order.
+    -else 
+      =@order.buyers_email
+      (We will contact you by email soon.)
+    %p=@order.payment_preference
+
+  .unit     
+    %h2 Contents of package (Smibs).
+    %p 
+      Package: 
+      =price(@order.fabrics.count)
+      Total: package + postage:
+      =price_with_postage(@order)
+    -@order.fabrics.each do |fabric|
+      .order_items
+        %img{:src => "#{fabric.image}", :class => 'fabrics', :width => '159', :height => '94', :alt => "#{fabric.title}"}
+        %p=fabric.title

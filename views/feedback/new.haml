@@ -1,0 +1,21 @@
+%style
+  :sass
+    #feedback 
+      :width 400px
+      textarea
+        :border 3px solid #e8e8e8
+      input
+        :border 3px solid #e8e8e8
+#feedback
+  %h1 Feedback
+  %p We'd love to hear from you.
+  %form{:method => "post", :action => "/feedback/send"}
+    %label message:
+    %br
+    %textarea{:type => 'text', :rows => '5', :cols => '32'}
+    %br
+    %label email: (so we can reply)
+    %input{:type => 'text', :value => ''}
+    %input{:type => 'submit', :value => 'Send', :class => 'thickbox'}
+  %a{:href => '/feedback/success?height=400&width=450', :class => 'thickbox'} 
+    Go!

@@ -1,0 +1,25 @@
+Smibs is almost a shop but more of a 'point of contact' to sell these bib/smock things I make on the sewing machine.
+
+It's written very specific to my needs but you are welcome to use and wrangle it.
+
+Specifically it is for one product the only variable in that product is the fabric pattern, therefore to use it for multiple product types you could add a price and description field to Fabrics, for example and umm you might want to change Fabrics to Products.. like I said it's specific to my needs.
+
+It has no image uploads, I plan on scp'ing the images over to the server and typing the path to where the images are hosted rather than all the junk of uploads.
+
+It has no validations on an order, because;
+*I can.
+*I HATE it when forms fail.
+*Rather than rejecting an order and potentially loosing it for good, it gives me a hook for further communication and a potential sale, providing an email was provided.
+
+Managing Smibs requires SmibsZen which I wrote as a separate Sinatra App, it connects to Smibs Database.
+Located at "http://github/brodaigh/smibs-zen/tree/master":http://github/brodaigh/smibs-zen/tree/master
+
+Todo:
+*...
+
+Before I go Live:
+*Pictures.
+*Organize my sewing cave.
+*Go fabric shopping! :)
+
+*The brand Smibs is obviously not for public use without my written permission.*

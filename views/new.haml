@@ -1,0 +1,107 @@
+.pages
+  #description
+    %a{:href => "/feedback/new?height=400&width=450", :class => 'thickbox'}
+      %img.buttons{:src => '/images/buttons2.png'}
+    
+    .part.left
+      %a{:href => '/'}
+        %img.logo{:src => '/images/SMIBS.png', :alt => "Smibs"}
+      =text :description_left
+    
+    .part.right
+      =text :description_right
+      %a.right{:href => "#selection"}
+        %img{:src => '/images/bubble.png', :width => '200'}
+    
+.pages
+  #selection
+    .part.left
+      %a{:href => '/'}
+        %img.logo{:src => '/images/SMIBS.png', :alt => "Smibs"}
+    
+      .clear
+      =text :selection
+      %a.right{:href => "#order"}
+        %img{:src => '/images/bubble2.png', :width => '300'}
+    
+    %form{:method => "post", :action => "/orders/create", :id => "new_order"}
+      %ul
+        -@fabrics.each do |fabric|
+          %li
+            %a{:href => "#{fabric.image}", :style => 'float:right',:rel => 'lightbox'}
+              view +
+            %br
+            %img{:src => "#{fabric.image}", :class => 'fabrics', :width => '159', :height => '94', :alt => fabric.metres.to_i.to_s + ' available'}
+            .photos  
+              %input{:name => "fabric_ids", :type => "checkbox", :value => [fabric.id.to_i]}
+              %b=fabric.title.capitalize
+      %a{:href => "/feedback/new?height=400&width=450", :class => 'thickbox'}
+        %img.buttons{:src => '/images/buttons2.png'}
+      .clear	
+      .space	
+    
+      #order
+        %a{:href => "/feedback/new?height=400&width=450", :class => 'thickbox'}
+          %img.buttons{:src => '/images/buttons2.png'}
+        %a{:href => '/'}
+          %img.logo{:src => '/images/SMIBS.png', :alt => "Smibs"}
+      
+        %a.right{:href => "#selection"}
+          I want to review my selection..
+        %br
+        %a.anchor{:href => "#description"}
+          home
+        .clear
+      
+        %fieldset
+          %legend Buyers Details
+          .field
+            %label Buyers name.
+            %input{:type => "text", :name => "order_buyers_name", :value => ""}
+          .field
+            %label Buyers email.
+            %input{:type => "text", :name => "order_buyers_email", :value => ""}
+      
+        %fieldset
+          %legend Postage Details
+          .field 
+            %label 
+              Recipients address. 
+              %br
+              %small (As it would appear on a parcel.)
+            %br
+            %textarea{:type => "text", :cols => '25', :rows => '6', :name => "order_recipients_address", :value => ""}
+      
+          .field 
+            %label 
+              If it is a gift, who is it for?
+              %br
+              %small (Name to put on parcel.)
+            %input{:type => "text", :name => "order_recipients_name", :value => ""}   
+      
+          .field 
+            %label Smibs are made in Australia. Will we be posting this parcel overseas? 
+            %p
+              Australia. 
+              %input{:type => "radio", :name => "order_overseas", :value => 0}
+              Overseas.
+              %input{:type => "radio", :name => "order_overseas", :value => 1}
+      
+        %fieldset.smaller
+          %legend Preferred method of payment
+          %p
+            %input{:type => "radio", :name => "order_payment_preference", :value => "Paypal or Credit Card"}
+            Credit Card or Paypal
+          %p.radio
+            %input{:type => "radio", :name => "order_payment_preference", :value => "Bank Deposit"}
+            Bank Deposit
+          %p
+            %input{:type => "radio", :name => "order_payment_preference", :value => "Cheque or Money Order"}
+            Money Order
+          %img.payment{:src => '/images/pay.gif'}
+        =text :order
+	    
+        %input{:type => 'submit', :value => 'Order Smibs'}
+        .clear
+      
+      

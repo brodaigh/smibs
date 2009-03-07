@@ -1,0 +1,17 @@
+!!! Strict
+%html{"xml:lang" => "en", :lang => "en", :xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    %title Smibs
+    %link{:href => versioned_sassy_baby('style'), :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => versioned_css('jquery.lightbox-0.5'), :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => versioned_css('jquery.thickbox-3.3'), :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    %script{:src => versioned_js('jquery'), :type => "text/javascript"}
+    %script{:src => versioned_js('application'), :type => "text/javascript"}
+    %script{:src => versioned_js('jquery.lightbox-0.5.min'), :type => "text/javascript"}
+    %script{:src => versioned_js('localscroll-min'), :type => "text/javascript"}
+    %script{:src => versioned_js('thickbox-3.3'), :type => "text/javascript"}
+  %body
+    #wrapper
+      =yield
+
