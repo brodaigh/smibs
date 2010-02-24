@@ -9,7 +9,7 @@ It has no image uploads, I plan on scp'ing the images over to the server and typ
 It has no validations on an order, because;
 * I can.
 * I HATE it when forms fail.
-* Rather than rejecting an order and potentially loosing it for good, it gives me a hook for further communication and a potential sale, providing an email was provided.
+* Rather than rejecting an order and potentially losing it for good, it gives me a hook for further communication and a potential sale, providing an email was provided.
 
 Managing Smibs requires SmibsZen which I wrote as a separate Sinatra App, it connects to Smibs Database.
 Located at "http://github/brodaigh/smibs-zen/tree/master":http://github/brodaigh/smibs-zen/tree/master
